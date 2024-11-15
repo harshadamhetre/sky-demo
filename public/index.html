@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <style>
+      .DX-DT-aval {
+          border: 0;
+          height: 50px;
+          cursor: pointer;
+          position: fixed;
+          bottom: 56px;
+          background: transparent;
+          right: 199px;
+          display: flex;
+          max-width: 166px;
+          z-index: 9999999999999;
+      }
+      .DX-DT-aval-svg {
+          position: absolute;
+          left: 1px;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+
+      .DX-DT-resume {
+          bottom: 0px;
+          right: 0px;
+          z-index: 999999;
+          position: fixed;
+          height: 45px;
+          width: 375px;
+      }
+  </style>
+    <meta charset="utf-8" />
+    <title>Sky Demo</title>
+    <script src="https://oc-cdn-public-eur.azureedge.net/livechatwidget/v2scripts/LiveChatBootstrapper.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link id="Microsoft_Omnichannel_LCWidget_Chat_Iframe_Style" type="text/css" rel="stylesheet" href="https://oc-cdn-public-eur.azureedge.net/livechatwidget/v2public/styles/LiveChatWidgetFrame.css">
+  </head>
+  <body>
+    <div id="sky-c2c"></div>
+    <script src="/c2c-btn.js"></script>
+    <script id="Microsoft_Omnichannel_LCWidget" src="https://oc-cdn-ocprod.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js" data-app-id="5ba9938a-87d6-48b6-8487-af12833a7ac1" data-lcw-version="prod" data-org-id="8d56357e-188d-ef11-8a66-6045bd00321e" data-org-url="https://m-8d56357e-188d-ef11-8a66-6045bd00321e.us.omnichannelengagementhub.com" data-customization-callback="lcw"></script>
+    <script>
+      function lcw() {
+          return {
+              styleProps: {
+                  className: "embedded-chat",
+              },
+              chatButtonProps: {
+                  controlProps: {
+                      hideChatButton: true
+                  }
+              },
+              headerProps: {
+                  styleProps: {
+                      generalStyleProps: {
+                          backgroundColor: "linear-gradient(90deg, #ff9e00 0, red 34.99%, #b5007d 59.96%, #21429c 84.94%, #0071ff 100%)",
+                          height: "47px",
+                          fontSize: "16px",
+                          paddingLeft: "15px",
+                          borderBottom: "1px solid #cccccc"
+                      },
+                      closeButtonStyleProps: {
+                          backgroundImage: "url('/images/close.svg')",
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          margin: "5px",
+                          width: "30px",
+                          height: "30px",
+                          color: "rgba(255, 255, 255, 0)"
+                      },
+                      minimizeButtonStyleProps: {
+                          backgroundImage: "url('/images/minimize.svg')",
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                          margin: "5px",
+                          width: "30px",
+                          height: "30px",
+                          color: "rgba(255, 255, 255, 0)"
+                      },
+                      closeButtonHoverStyleProps: {
+                          margin: "5px",
+                          backgroundColor: "rgba(255, 255, 255, 0.1)",
+                          color: "rgba(255, 255, 255, 0.1)",
+                          filter: "none"
+                      },
+                      minimizeButtonHoverStyleProps: {
+                          margin: "5px",
+                          backgroundColor: "rgba(255, 255, 255, 0.1)",
+                          color: "rgba(255, 255, 255, 0.1)",
+                          filter: "none"
+                      }
+                  },
+                  controlProps: {
+                      hideIcon: true,
+                      hideTitle: true,
+                      hideMinimizeButton: false,
+                      headerTitleProps: {
+                          text: "Currys Webchat"
+                      },
+                      leftGroup: {
+                          children: [
+                              '{"$$typeof": "$$Symbol:react.element","type": "img","key": null,"ref": null,"props": {"src": "`${process.env.PUBLIC_URL}/images/logo.svg`","width": 65,"height": 19,"alt": "Sky Logo"},"_owner": null,"_store": {}}'
+                          ]
+                      },
+                  },
+              },
+              loadingPaneProps: {
+                  controlProps: {
+                      hideLoadingPane: true
+                  }
+              },
+              footerProps: {
+                  controlProps: {
+                      hideEmailTranscriptButton: true
+                  }
+              },
+              emailTranscriptPane: {
+                  controlProps: {
+                      titleText: "Your Chat Transcript",
+                      subtitleText: "To receive an emailed chat transcript, please type your email address below.",
+                      isButtonGroupHorizontal: false,
+                      cancelButtonText: "Back to Chat",
+                      sendButtonText: "Submit",
+                      inputInitialText: ""
+                  },
+                  styleProps: {
+                      sendButtonStyleProps: {
+                          backgroundColor: "rgb(255, 255, 255)",
+                          color: "rgb(255, 255, 255)",
+                          borderRadius: "8px",
+                          width: "100px",
+                          height: "44px",
+                          fontSize: "17px",
+                          fontWeight: "400"
+                      },
+                      cancelButtonStyleProps: {
+                          backgroundColor: "rgb(255, 255, 255)",
+                          color: "rgb(0, 79, 182)",
+                          borderRadius: "8px",
+                          width: "100px",
+                          height: "44px",
+                          fontSize: "17px",
+                          fontWeight: "400"
+                      },
+                      headerGroupStyleProps: {
+                          fontSize: "20px",
+                          fontWeight: "bold",
+                          height: "120px"
+                      },
+                      titleStyleProps: {
+                          fontSize: "20px",
+                          fontWeight: "bold",
+                          textAlign: "left",
+                          color: "rgb(0, 0, 0)"
+                      },
+                      subtitleStyleProps: {
+                          fontSize: "16px",
+                          fontWeight: "400",
+                          textAlign: "left",
+                          color: "rgb(0, 0, 0)"
+                      }
+                  }
+              },
+              webChatContainerProps: {
+                  webChatStyles: {
+                      backgroundColor: "rgb(255, 255, 255)",
+                      bubbleBorderRadius: "22px !important",
+                      avatarSize: 0,
+                      primaryFont: "FuturaPTBook-Reg",
+                      bubbleBackground: "rgb(238, 238, 238)",
+                      bubbleTextColor: "rgb(45, 45, 45)",
+                      bubbleFromUserBackground: "rgb(45, 45, 45)",
+                      bubbleFromUserTextColor: "rgb(255, 255, 255)",
+                      bubbleFromUserBorderRadius: "22px !important",
+                      hideUploadButton: true,
+                      suggestedActionBackgroundColor: "rgb(255, 255, 255)",
+                      suggestedActionBorderColor: "rgb(147, 71, 255)",
+                      suggestedActionTextColor: "rgb(147, 71, 255)",
+                      suggestedActionLayout: "flow",
+                      suggestedActionBorderRadius: "19.5px !important",
+                      suggestedActionsStackedWidth: "auto !important",
+                      sendBoxButtonShadeColorOnDisabled: "rgb(102, 168, 255)",
+                      suggestedActionsStackedOverflow: "scroll",
+                      width: "auto !important",
+                      typingAnimationDuration: "1500"
+                  },
+                  renderingMiddlewareProps: {
+                      disableAvatarMiddleware: true,
+                  }
+              },
+              confirmationPaneProps: {
+                  controlProps: {
+                      titleText: "End Chat?",
+                      subtitleText: "You are about to end your current chat session. This will exit the chat conversation immediately.",
+                      confirmButtonText: "END CHAT",
+                      cancelButtonText: "BACK TO CHAT"
+                  },
+                  styleProps: {
+                      generalStyleProps: {
+                          width: "343px",
+                          borderRadius: "0px",
+                          color: "rgb(31, 31, 33)",
+                          backgroundColor: "rgb(255, 255, 255)",
+                          position: "absolute",
+                          top: "50%",
+                          left: "50%",
+                          padding: "10px 0px 5px",
+                          transform: "translate(-50%, -50%)"
+                      },
+                      buttonGroupStyleProps: {
+                          flexFlow: "column"
+                      },
+                      titleStyleProps: {
+                          fontSize: "20px",
+                          fontWeight: "600",
+                          textAlign: "left",
+                          color: "rgb(0, 0, 0)",
+                          padding: "4px 20px 16px"
+                      },
+                      subtitleStyleProps: {
+                          fontSize: "16px",
+                          fontWeight: "400",
+                          textAlign: "left",
+                          color: "rgb(0, 0, 0)",
+                          padding: "4px 20px 16px"
+                      },
+                      confirmButtonStyleProps: {
+                          backgroundColor: "rgb(45, 45, 45)",
+                          color: "rgb(255, 255, 255)",
+                          borderRadius: "8px",
+                          width: "295px",
+                          height: "32px",
+                          fontSize: "14px",
+                          textAlign: "center",
+                          textTransform: "uppercase",
+                          borderRadius: "0px",
+                          margin: "0px auto",
+                          border: "none !important"
+                      },
+                      cancelButtonStyleProps: {
+                          backgroundColor: "rgb(45, 45, 45)",
+                          color: "rgb(255, 255, 255)",
+                          borderRadius: "8px",
+                          width: "295px",
+                          height: "32px",
+                          fontSize: "14px",
+                          textAlign: "center",
+                          textTransform: "uppercase",
+                          borderRadius: "0px",
+                          margin: "0px auto",
+                          border: "none !important"
+                      },
+                      confirmButtonFocusedStyleProps: {
+                          backgroundColor: "rgb(45, 45, 45)",
+                          color: "rgb(255, 255, 255)"
+                      },
+                      cancelButtonFocusedStyleProps: {
+                          backgroundColor: "rgb(45, 45, 45)",
+                          color: "rgb(255, 255, 255)"
+                      },
+                      cancelButtonHoveredStyleProps: {
+                          backgroundColor: "rgb(45, 45, 45)",
+                          color: "rgb(255, 255, 255)"
+                      },
+                      confirmButtonHoveredStyleProps: {
+                          backgroundColor: "rgb(45, 45, 45)",
+                          color: "rgb(255, 255, 255)"
+                      }
+                  }
+              }
+          };
+      }
+
+      //window.addEventListener("lcw:ready", function handleLivechatReadyEvent() {
+      //    // Microsoft.Omnichannel.LiveChatWidget.SDK.setContextProvider(
+      //    //     contextProvider
+      //    // );
+      //    // Microsoft.Omnichannel.LiveChatWidget.SDK.startChat();
+      //});
+
+      //window.addEventListener(
+      //    "lcw:error",
+      //    function handleLivechatErrorEvent(errorEvent) {
+      //        // console.log(errorEvent);
+      //    }
+      //);
+
+      window.addEventListener("lcw:ready", function handleLivechatReadyEvent() {
+          //Microsoft.Omnichannel.LiveChatWidget.SDK.setContextProvider(
+          //    contextProvider
+          //);
+          //Microsoft.Omnichannel.LiveChatWidget.SDK.startChat();
+      });
+
+      window.addEventListener(
+          "lcw:error",
+          function handleLivechatErrorEvent(errorEvent) {
+              //console.log(errorEvent);
+          }
+      );
+  </script> 
+  </body>
+</html>
