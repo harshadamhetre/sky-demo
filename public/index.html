@@ -6,25 +6,20 @@
     font-family: 'Sky-Text';
     font-style: normal;
     font-weight: normal;
-    src: url('font/sky_reg-webfont.ttf') format('truetype'), url('font/sky_italic-webfont.ttf') format('truetype'), url('font/sky_bold-webfont.ttf') format('truetype');
+    src: url('https://raw.githubusercontent.com/harshadamhetre/sky-demo/main/public/font/sky_reg-webfont.ttf') format('truetype'), url('https://raw.githubusercontent.com/harshadamhetre/sky-demo/main/public/font/sky_italic-webfont.ttf') format('truetype'), url('https://raw.githubusercontent.com/harshadamhetre/sky-demo/main/public/font/sky_bold-webfont.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'skytext-medium';
     font-style: normal;
     font-weight: normal;
-    src: url('font/sky_med-webfont.ttf') format('truetype');
+    src: url('https://raw.githubusercontent.com/harshadamhetre/sky-demo/main/public/font/sky_med-webfont.ttf') format('truetype');
 }
 
-@font-face {
-    font-family: 'skytext-light';
-    font-style: normal;
-    font-weight: normal;
-    src: url('font/SkyText_Lt.ttf') format('truetype');
-}
       .DX-DT-aval {
           border: 0;
           height: 50px;
+          font-family: 'Sky-Text', 'skytext-medium', sans-serif;
           cursor: pointer;
           position: fixed;
           bottom: 56px;
@@ -59,7 +54,7 @@
   <body>
     <div id="sky-c2c"></div>
     <script src="/c2c-btn.js"></script>
-    <script id="Microsoft_Omnichannel_LCWidget" src="https://oc-cdn-ocprod.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js" data-app-id="5ba9938a-87d6-48b6-8487-af12833a7ac1" data-lcw-version="prod" data-org-id="8d56357e-188d-ef11-8a66-6045bd00321e" data-org-url="https://m-8d56357e-188d-ef11-8a66-6045bd00321e.us.omnichannelengagementhub.com" data-customization-callback="lcw"></script>
+    <script id="Microsoft_Omnichannel_LCWidget" src="https://oc-cdn-ocprod.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js" data-app-id="5ba9938a-87d6-48b6-8487-af12833a7ac1" data-lcw-version="prod" data-org-id="8d56357e-188d-ef11-8a66-6045bd00321e" data-org-url="https://m-8d56357e-188d-ef11-8a66-6045bd00321e.us.omnichannelengagementhub.com" data-customization-callback="lcw" data-font-family-override="Sky-Text"></script>
     <script>
       function lcw() {
           return {
