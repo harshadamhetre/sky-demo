@@ -61,21 +61,30 @@ const C2CThemes = {
         `,
         [C2CStates.RESUME]: `
             <button aria-label="Click to resume chat" class="DX-DT-resume" role="button">
-              <img src="restore.svg" alt="Resume Chat" style="cursor: pointer;">
+              <img src="/images/restore.svg" alt="Resume Chat" style="cursor: pointer;">
             </button>`
     }
 };
 const C2CManager = (function () {
     var buttons = [];
-
+    var currentState = C2CStates.START;
     function updateC2CButtons(state) {
+        currentState = state || currentState;
         for (var i = 0; i < buttons.length; i++) {
             var button = buttons[i];
             var element = document.getElementById(button.id);
-            if (element && !!state) {
-                element.innerHTML = button.theme[state];
-                element.querySelector("button").addEventListener("click", launchChat);
-                if (state === C2CStates.START) {
+            if (element) {
+                element.innerHTML = button.theme[currentState];
+                var buttonElement = element.querySelector("button");
+                if (buttonElement) {
+                    buttonElement.removeEventListener("click", launchChat);
+                    if (state === C2CStates.RESUME) {
+                        //buttonElement.removeEventListener("click", launchChat);
+                        //buttonElement.addEventListener("click", maximizeChat);
+                        buttonElement.addEventListener("click", launchChat);
+                    } else {
+                        buttonElement.addEventListener("click", launchChat);
+                    }
                 }
             }
         }
@@ -95,7 +104,7 @@ const C2CManager = (function () {
 
         window.addEventListener("lcw:closeChat", function handleLivechatStartedEvent(evt) {
             console.log("lcw:closeChat event fired", evt);
-            updateC2CButtons();
+            updateC2CButtons(C2CStates.START);
         });
 
         window.addEventListener("lcw:onClose", function handleLivechatStartedEvent(evt) {
@@ -103,14 +112,14 @@ const C2CManager = (function () {
             updateC2CButtons(C2CStates.START);
         });
 
-        window.addEventListener("lcw:onMinimize", function handleLivechatStartedEvent(evt) {
+        window.addEventListener("lcw:onMinimize", function handleLivechatMinimizedEvent(evt) {
             console.log("lcw:onMinimize event fired", evt);
-            updateC2CButtons();
+            updateC2CButtons(C2CStates.RESUME);
         });
 
-        window.addEventListener("lcw:onMaximize", function handleLivechatStartedEvent(evt) {
+        window.addEventListener("lcw:onMaximize", function handleLivechatMaximizedEvent(evt) {
             console.log("lcw:onMaximize event fired", evt);
-            updateC2CButtons();
+            updateC2CButtons(C2CStates.INPROGRESS);
         });
 
         window.addEventListener("lcw:chatRetrieved", function handleLivechatStartedEvent(evt) {
@@ -122,12 +131,16 @@ const C2CManager = (function () {
     function launchChat() {
         Microsoft.Omnichannel.LiveChatWidget.SDK.startChat();
     }
-
+    
+    function maximizeChat() {
+        Microsoft.Omnichannel.LiveChatWidget.SDK.maximizeChat();
+    }
     initEventListeners();
 
     return {
         addC2CButton: function (id, theme) {
             buttons.push({ id: id, theme: theme });
+            updateC2CButtons();
         },
     };
 })();
