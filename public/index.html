@@ -115,7 +115,7 @@
                       },
                       leftGroup: {
                           children: [
-                              '{"$$typeof": "$$Symbol:react.element","type": "img","key": null,"ref": null,"props": {"src": "https://raw.githubusercontent.com/harshadamhetre/sky-demo/refs/heads/main/public/images/skylogo.svg","width": 55,"height": 48,"alt": "Sky Logo"},"_owner": null,"_store": {}}'
+                              '{"$$typeof": "$$Symbol:react.element","type": "img","key": null,"ref": null,"props": {"src": "https://raw.githubusercontent.com/harshadamhetre/sky-demo/refs/heads/main/public/images/skylogo.svg","width": 155,"height": 48,"alt": "Sky Logo"},"_owner": null,"_store": {}}'
                           ]
                       },
                   },
@@ -183,7 +183,6 @@
                   webChatStyles: {
                       backgroundColor: "rgb(255, 255, 255)",
                       bubbleBorderRadius: "8px 8px 8px 0px !important",
-                      avatarSize: 0,
                       primaryFont: "'Sky-Text', 'skytext-medium', sans-serif",
                       bubbleBackground: "rgb(242, 242, 245)",
                       bubbleTextColor: "rgb(74, 74, 74)",
@@ -203,7 +202,16 @@
                       typingAnimationDuration: "1500"
                   },
                   renderingMiddlewareProps: {
-                      disableAvatarMiddleware: false,
+                    avatarStyleProps: {
+                                  backgroundImage: "url('https://raw.githubusercontent.com/harshadamhetre/sky-demo/refs/heads/main/public/images/Sky_Master_Brand_Logo_SMALL_RGB.svg')",
+                                  backgroundSize: "100% 100%",
+                                  backgroundColor: "rgba(255, 255, 255, 0)",
+                                  width: "30px",
+                                  height: "30px",
+            },
+            avatarTextStyleProps: {
+                display: "none"
+            }
                   }
               },
               confirmationPaneProps: {
